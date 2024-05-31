@@ -1,7 +1,7 @@
 const db = require('../config/db');
 
 const createUser = (username, email, encryptedPassword, contact_number, callback) => {
-    const query =" INSERT INTO user (username, email, password, contact_number) VALUES (?, ?, ?, ?)";
+    const query =`call auth_db.USER_INSERT(?, ?, ?, ?)`;
     db.execute(query, [username, email, encryptedPassword, contact_number], callback);
 };
 

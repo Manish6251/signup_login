@@ -44,6 +44,7 @@ const login = (req, res) => {
 
         const user = results[0];
         const decryptedPassword = decrypt(JSON.parse(user.password));
+        console.log(decryptedPassword);
 
         if (password !== decryptedPassword) {
             return res.status(400).send('Invalid username or password');
